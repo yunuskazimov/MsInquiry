@@ -24,12 +24,12 @@ public class AdDto {
     @ApiModelProperty(value = "Enter valid description for Ad",example = "31 dekabr Milli Hemreylik gunudur")
     private String description;
 
-    @ApiModelProperty(value = "Ad actual type",example = "ACCEPT")
+    @ApiModelProperty(value = "Ad actual type",example = "share")
     private AdTypeEnum adType;
 
     @ApiModelProperty(value = "Ad deletion status",example = "false")
     private boolean isDeleted;
 
-    @ApiModelProperty(value = "Enter Ad Status",example = "ACTIVE")
+    @ApiModelProperty(value = "Enter Ad Status",example = "active")
     private AdStatusEnum status;
 }

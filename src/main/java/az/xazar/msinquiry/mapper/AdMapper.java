@@ -2,7 +2,6 @@ package az.xazar.msinquiry.mapper;
 
 import az.xazar.msinquiry.entity.AdEntity;
 import az.xazar.msinquiry.model.Ad.AdDto;
-import az.xazar.msinquiry.service.AdServiceImpl;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
