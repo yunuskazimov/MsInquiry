@@ -3,7 +3,6 @@ package az.xazar.msinquiry.mapper;
 import az.xazar.msinquiry.entity.AdEntity;
 import az.xazar.msinquiry.model.Ad.AdDto;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 
