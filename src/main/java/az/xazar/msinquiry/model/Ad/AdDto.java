@@ -28,7 +28,7 @@ public class AdDto {
     private AdTypeEnum adType;
 
     @ApiModelProperty(value = "Ad deletion status",example = "false")
-    private String isDeleted;
+    private boolean isDeleted;
 
     @ApiModelProperty(value = "Enter Ad Status",example = "ACTIVE")
     private AdStatusEnum status;

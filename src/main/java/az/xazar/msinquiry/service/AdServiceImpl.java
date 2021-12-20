@@ -1,5 +1,7 @@
 package az.xazar.msinquiry.service;
 
+import az.xazar.msinquiry.entity.AdEntity;
+import az.xazar.msinquiry.mapper.AdMapper;
 import az.xazar.msinquiry.model.Ad.AdDto;
 import az.xazar.msinquiry.repository.AdRepository;
 import org.springframework.stereotype.Service;
@@ -9,14 +11,18 @@ import java.util.List;
 @Service
 public class AdServiceImpl implements AdService {
     private final AdRepository adRepository;
+    private final AdMapper adMapper;
 
-    public AdServiceImpl(AdRepository adRepository) {
+    public AdServiceImpl(AdRepository adRepository, AdMapper adMapper) {
         this.adRepository = adRepository;
+        this.adMapper = adMapper;
     }
 
     @Override
     public AdDto createAd(AdDto adDto) {
-        return null;
+        AdEntity entity = adRepository.save(adMapper.dtoToEntity(adDto));
+        adDto.setId(entity.getId());
+        return adDto;
     }
 
     @Override
@@ -31,7 +37,7 @@ public class AdServiceImpl implements AdService {
 
     @Override
     public List<AdDto> getAds() {
-        return null;
+        return adMapper.entitiesToDtos(adRepository.findAll());
     }
 
     @Override

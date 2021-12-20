@@ -29,13 +29,15 @@ public class AdEntity {
 
     @Enumerated(EnumType.STRING)
     private AdTypeEnum adType;
-    private String isDeleted;
+    private boolean isDeleted;
+    @Enumerated(EnumType.STRING)
     private AdStatusEnum status;
 
     @CreationTimestamp
     @Column(nullable = false,updatable = false)
     private LocalDateTime createdAt;
+
     @UpdateTimestamp
     @Column(nullable = false)
-    private LocalDateTime UpdateAt;
+    private LocalDateTime updatedAt;
 }
