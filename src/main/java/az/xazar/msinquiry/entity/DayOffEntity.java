@@ -1,8 +1,7 @@
 package az.xazar.msinquiry.entity;
 
-
-import az.xazar.msinquiry.model.Ad.AdStatusEnum;
-import az.xazar.msinquiry.model.Ad.AdTypeEnum;
+import az.xazar.msinquiry.model.DayOffStatus;
+import az.xazar.msinquiry.model.DayOffType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,29 +12,32 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
+@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "day_off")
 @Entity
-@Table(name = "ads")
-@Builder
-public class AdEntity {
+public class DayOffEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
-    private String name;
-    private String description;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
 
     @Enumerated(EnumType.STRING)
-    private AdTypeEnum adType;
-    private boolean isDeleted;
+    private DayOffStatus status;
+
     @Enumerated(EnumType.STRING)
-    private AdStatusEnum status;
+    private DayOffType type;
+    private String result;
+    private boolean isDeleted;
 
     @CreationTimestamp
-    @Column(nullable = false,updatable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
