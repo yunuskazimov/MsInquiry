@@ -39,12 +39,12 @@ public class AdServiceImpl implements AdService {
 
     @Override
     public List<AdDto> getAds() {
-        return adMapper.entitiesToDtos(adRepository.findAll());
+        return adMapper.entitiesToDto(adRepository.findAll());
     }
 
     @Override
     public List<AdDto> getAdsByUserId(Long userid) {
-        return adMapper.entitiesToDtos(adRepository.findAllByUserId(userid));
+        return adMapper.entitiesToDto(adRepository.findAllByUserId(userid));
     }
 
     @Override

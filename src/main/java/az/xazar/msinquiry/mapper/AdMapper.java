@@ -17,10 +17,11 @@ public interface AdMapper {
 
     AdDto entityToDto(AdEntity entity);
 
-    List<AdDto> entitiesToDtos(List<AdEntity> entities);
+    List<AdDto> entitiesToDto(List<AdEntity> entities);
 
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
-    @Mapping(target = "isDeleted",source = "deleted")
+    @Mapping(target = "isDeleted", source = "deleted")
     AdEntity dtoToEntity(AdDto dto);
+
 }

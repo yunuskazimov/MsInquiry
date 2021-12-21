@@ -6,6 +6,10 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.Column;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -32,4 +36,10 @@ public class AdDto {
 
     @ApiModelProperty(value = "Enter Ad Status",example = "active")
     private AdStatusEnum status;
+
+    @ApiModelProperty(value = "Create Date of Ad. Not used in POST requests." ,hidden = true)
+    private LocalDateTime createdAt;
+
+    @ApiModelProperty(value = "Update Date of Ad. Not used in POST requests.",hidden = true)
+    private LocalDateTime updatedAt;
 }
