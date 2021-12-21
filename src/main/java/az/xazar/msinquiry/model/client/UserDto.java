@@ -1,13 +1,18 @@
-package az.xazar.msinquiry.entity;
+package az.xazar.msinquiry.model.client;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Builder
 @Data
-public class UserEntity {
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class UserDto {
+
     //TODO -> search that!! is that true???
 
     private Long userId;

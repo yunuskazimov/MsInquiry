@@ -25,6 +25,7 @@ public class DayOffEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
+    private String name;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 

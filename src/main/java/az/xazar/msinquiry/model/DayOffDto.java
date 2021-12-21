@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class DayOffDto {
     private Long id;
     private Long userId;
+    private String name;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private DayOffStatus status;

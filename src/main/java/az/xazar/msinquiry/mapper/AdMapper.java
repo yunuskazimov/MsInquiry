@@ -15,13 +15,13 @@ public interface AdMapper {
 
     AdMapper INSTANCE = Mappers.getMapper(AdMapper.class);
 
-    AdDto entityToDto(AdEntity entity);
+    AdDto toDto(AdEntity entity);
 
-    List<AdDto> entitiesToDto(List<AdEntity> entities);
+    List<AdDto> toDtos(List<AdEntity> entities);
 
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "isDeleted", source = "deleted")
-    AdEntity dtoToEntity(AdDto dto);
+    AdEntity toEntity(AdDto dto);
 
 }

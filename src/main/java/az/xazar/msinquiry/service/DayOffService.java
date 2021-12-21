@@ -6,15 +6,15 @@ import az.xazar.msinquiry.model.DayOffDto;
 import java.util.List;
 
 public interface DayOffService {
-    DayOffEntity createDayOff(DayOffDto dayOffDto);
+    DayOffDto createDayOff(DayOffDto dayOffDto);
 
-    DayOffEntity editDayOff(DayOffDto dayOffDto);
+    DayOffDto editDayOff(DayOffDto dayOffDto);
 
-    DayOffEntity getDayOffById(Long id);
+    DayOffDto getDayOffById(Long id);
 
-    List<DayOffEntity> getDayOffs();
+    List<DayOffDto> getDayOffs();
 
-    List<DayOffEntity> getDayOffsByUserId(Long userid);
+    List<DayOffDto> getDayOffsByUserId(Long userid);
 
     void deleteDayOff(Long id);
 }

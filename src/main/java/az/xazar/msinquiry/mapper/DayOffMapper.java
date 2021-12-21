@@ -16,10 +16,10 @@ public interface DayOffMapper {
     @Mapping(target = "createdAt",ignore = true)
     @Mapping(target = "updatedAt",ignore = true)
     @Mapping(target = "isDeleted", source = "deleted")
-    DayOffEntity dtoToEntity(DayOffDto dto);
+    DayOffEntity toEntity(DayOffDto dto);
 
 
-    DayOffDto entityToDto(DayOffEntity entity);
+    DayOffDto toDto(DayOffEntity entity);
 
-    List<DayOffDto> entitiesToDto (List<DayOffEntity> entityList);
+    List<DayOffDto> toDtos(List<DayOffEntity> entityList);
 }
