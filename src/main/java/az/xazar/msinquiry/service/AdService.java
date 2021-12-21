@@ -9,11 +9,11 @@ public interface AdService {
 
     AdDto editAd(AdDto adDto);
 
-    AdDto getAd(Long id);
+    AdDto getAdByid(Long id);
 
     List<AdDto> getAds();
 
     List<AdDto> getAdsByUserId(Long userid);
 
-    void deleteAd(Long Id);
+    void deleteAd(Long id);
 }

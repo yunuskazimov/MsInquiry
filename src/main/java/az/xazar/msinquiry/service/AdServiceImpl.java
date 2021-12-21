@@ -27,12 +27,14 @@ public class AdServiceImpl implements AdService {
 
     @Override
     public AdDto editAd(AdDto adDto) {
-        return null;
+        adRepository.findById(adDto.getId());
+        adRepository.save(adMapper.dtoToEntity(adDto));
+        return adDto;
     }
 
     @Override
-    public AdDto getAd(Long id) {
-        return null;
+    public AdDto getAdByid(Long id) {
+        return adMapper.entityToDto(adRepository.findById(id).get());
     }
 
     @Override
@@ -42,11 +44,13 @@ public class AdServiceImpl implements AdService {
 
     @Override
     public List<AdDto> getAdsByUserId(Long userid) {
-        return null;
+        return adMapper.entitiesToDtos(adRepository.findAllByUserId(userid));
     }
 
     @Override
-    public void deleteAd(Long Id) {
-
+    public void deleteAd(Long id) {
+        AdEntity entity = adRepository.findById(id).get();
+        entity.setDeleted(true);
+        adRepository.save(entity);
     }
 }

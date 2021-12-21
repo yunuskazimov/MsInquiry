@@ -21,5 +21,6 @@ public interface AdMapper {
 
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "isDeleted",source = "deleted")
     AdEntity dtoToEntity(AdDto dto);
 }
