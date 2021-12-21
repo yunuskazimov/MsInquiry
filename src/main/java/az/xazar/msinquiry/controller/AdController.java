@@ -48,12 +48,12 @@ public class AdController {
         return adService.getAds();
     }
 
-    @GetMapping("/{id}")        //TODO fix it
+    @GetMapping("/id/{id}")
     public AdDto getById(@PathVariable Long id) {
         return adService.getAdByid(id);
     }
 
-    @GetMapping("/{userId}")        //TODO fix it
+    @GetMapping("/uid/{userId}")
     public List<AdDto> getByUserId(@PathVariable Long userId) {
         return adService.getAdsByUserId(userId);
     }
