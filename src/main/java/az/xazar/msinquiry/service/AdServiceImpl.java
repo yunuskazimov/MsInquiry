@@ -10,47 +10,52 @@ import java.util.List;
 
 @Service
 public class AdServiceImpl implements AdService {
-    private final AdRepository adRepository;
+    private final AdRepository repo;
     private final AdMapper adMapper;
 
-    public AdServiceImpl(AdRepository adRepository, AdMapper adMapper) {
-        this.adRepository = adRepository;
+    public AdServiceImpl(AdRepository repo,
+                         AdMapper adMapper) {
+        this.repo = repo;
         this.adMapper = adMapper;
     }
 
     @Override
     public AdDto createAd(AdDto adDto) {
-        AdEntity entity = adRepository.save(adMapper.dtoToEntity(adDto));
+        AdEntity entity = repo.save(
+                adMapper.toEntity(adDto));
         adDto.setId(entity.getId());
         return adDto;
     }
 
     @Override
     public AdDto editAd(AdDto adDto) {
-        adRepository.findById(adDto.getId());
-        adRepository.save(adMapper.dtoToEntity(adDto));
+        repo.findById(adDto.getId());
+        repo.save(adMapper.toEntity(adDto));
         return adDto;
     }
 
     @Override
-    public AdDto getAdByid(Long id) {
-        return adMapper.entityToDto(adRepository.findById(id).get());
+    public AdDto getAdById(Long id) {
+        return adMapper.toDto(
+                repo.findById(id).get());
     }
 
     @Override
     public List<AdDto> getAds() {
-        return adMapper.entitiesToDto(adRepository.findAll());
+        return adMapper.toDtos(
+                repo.findAll());
     }
 
     @Override
     public List<AdDto> getAdsByUserId(Long userid) {
-        return adMapper.entitiesToDto(adRepository.findAllByUserId(userid));
+        return adMapper.toDtos(
+                repo.findAllByUserId(userid));
     }
 
     @Override
     public void deleteAd(Long id) {
-        AdEntity entity = adRepository.findById(id).get();
+        AdEntity entity = repo.findById(id).get();
         entity.setDeleted(true);
-        adRepository.save(entity);
+        repo.save(entity);
     }
 }

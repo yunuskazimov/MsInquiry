@@ -1,4 +1,4 @@
-package az.xazar.msinquiry.model;
+package az.xazar.msinquiry.model.client;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
