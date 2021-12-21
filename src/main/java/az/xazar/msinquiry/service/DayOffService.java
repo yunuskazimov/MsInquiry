@@ -10,7 +10,7 @@ public interface DayOffService {
 
     DayOffEntity editDayOff(DayOffDto dayOffDto);
 
-    DayOffEntity getDayOffByid(Long id);
+    DayOffEntity getDayOffById(Long id);
 
     List<DayOffEntity> getDayOffs();
 

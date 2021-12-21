@@ -33,7 +33,7 @@ public class AdServiceImpl implements AdService {
     }
 
     @Override
-    public AdDto getAdByid(Long id) {
+    public AdDto getAdById(Long id) {
         return adMapper.entityToDto(adRepository.findById(id).get());
     }
 

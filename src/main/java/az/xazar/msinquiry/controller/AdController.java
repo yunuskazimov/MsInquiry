@@ -35,7 +35,7 @@ public class AdController {
         if (!adDto.getId().equals(id)) {
             throw new RuntimeException(ErrorCodes.UNEXPECTED_EXCEPTION);
         }
-        adService.getAdByid(id);
+        adService.getAdById(id);
         adDto.setId(id);
         logger.info("Log Controller Ad : edit Dto -> " + adDto);
         return new ResponseEntity<>(adService.editAd(adDto), HttpStatus.OK);
@@ -50,7 +50,7 @@ public class AdController {
 
     @GetMapping("/id/{id}")
     public AdDto getById(@PathVariable Long id) {
-        return adService.getAdByid(id);
+        return adService.getAdById(id);
     }
 
     @GetMapping("/uid/{userId}")

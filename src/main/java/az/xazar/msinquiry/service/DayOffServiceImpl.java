@@ -2,11 +2,18 @@ package az.xazar.msinquiry.service;
 
 import az.xazar.msinquiry.entity.DayOffEntity;
 import az.xazar.msinquiry.model.DayOffDto;
+import az.xazar.msinquiry.repository.AdRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class DayOffServiceImpl implements DayOffService {
+    private final AdRepository adRepository;
+
+    public DayOffServiceImpl(AdRepository adRepository) {
+        this.adRepository = adRepository;
+    }
+
     @Override
     public DayOffEntity createDayOff(DayOffDto dayOffDto) {
         return null;
@@ -18,7 +25,7 @@ public class DayOffServiceImpl implements DayOffService {
     }
 
     @Override
-    public DayOffEntity getDayOffByid(Long id) {
+    public DayOffEntity getDayOffById(Long id) {
         return null;
     }
 

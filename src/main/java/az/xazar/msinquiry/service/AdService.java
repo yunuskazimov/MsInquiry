@@ -9,7 +9,7 @@ public interface AdService {
 
     AdDto editAd(AdDto adDto);
 
-    AdDto getAdByid(Long id);
+    AdDto getAdById(Long id);
 
     List<AdDto> getAds();
 
