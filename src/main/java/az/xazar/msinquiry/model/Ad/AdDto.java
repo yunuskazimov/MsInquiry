@@ -37,9 +37,11 @@ public class AdDto {
     @ApiModelProperty(value = "Enter Ad Status",example = "active")
     private AdStatusEnum status;
 
-    @ApiModelProperty(value = "Create Date of Ad. Not used in POST requests." ,hidden = true)
+    @ApiModelProperty(value = "Create Date of Ad. Not used in POST requests." ,example = "Only For Get POST: "
+           + "[2021,12,21,14,45,36,777973000]")
     private LocalDateTime createdAt;
 
-    @ApiModelProperty(value = "Update Date of Ad. Not used in POST requests.",hidden = true)
+    @ApiModelProperty(value = "Update Date of Ad. Not used in POST requests.",example = "Only For Get POST "
+            + "[2021,12,21,14,45,36,777973000]")
     private LocalDateTime updatedAt;
 }

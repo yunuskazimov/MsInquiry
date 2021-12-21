@@ -18,10 +18,10 @@ databaseChangeLog:
                   type: bigint
               - column:
                   name: name
-                  type: varchar(255)
+                  type: varchar(32)
               - column:
                   name: description
-                  type: varchar(32)
+                  type: varchar(255)
               - column:
                   name: ad_type
                   type: varchar(32)
