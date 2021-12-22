@@ -30,7 +30,6 @@ public class AdController {
     @PutMapping("/{id}")
     public ResponseEntity<AdDto> editAd(@RequestBody AdDto adDto,
                                         @PathVariable Long id) {
-        service.getAdById(id);
         adDto.setId(id);
         logger.info("Log Controller Ad : edit Dto -> " + adDto);
         return new ResponseEntity<>(service.editAd(adDto), HttpStatus.OK);
@@ -48,9 +47,9 @@ public class AdController {
         return service.getAdById(id);
     }
 
-    @GetMapping("/uid/{userId}")
-    public List<AdDto> getByUserId(@PathVariable Long userId) {
-        return service.getAdsByUserId(userId);
+    @GetMapping("/uid/{uId}")
+    public List<AdDto> getByUserId(@PathVariable Long uId) {
+        return service.getAdsByUserId(uId);
     }
 
     @DeleteMapping("/{id}")

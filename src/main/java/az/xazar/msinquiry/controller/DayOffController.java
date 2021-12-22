@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/dayoff")
 public class DayOffController {
@@ -25,17 +27,27 @@ public class DayOffController {
     public ResponseEntity<DayOffDto> editDayOff(@RequestBody DayOffDto dto,
                                                 @PathVariable Long id) {
         dto.setId(id);
-        return new ResponseEntity<>(service.editDayOff(dto), HttpStatus.OK);
+        return new ResponseEntity<>(
+                service.editDayOff(dto), HttpStatus.OK);
+    }
+
+    @GetMapping()
+    public List<DayOffDto> getDayOffs() {
+        return service.getDayOffs();
     }
 
     @GetMapping("id/{id}")
-    DayOffDto getById(@PathVariable Long id) {
+    public DayOffDto getById(@PathVariable Long id) {
         return service.getDayOffById(id);
+    }
+
+    @GetMapping("/uid/{uId}")
+    public List<DayOffDto> getByUserId(@PathVariable Long uId) {
+        return service.getDayOffsByUserId(uId);
     }
 
     @DeleteMapping("/{id}")
     public void deleteDayOff(@PathVariable Long id) {
-        service.getDayOffById(id);
         service.deleteDayOff(id);
     }
 }

@@ -1,6 +1,5 @@
 package az.xazar.msinquiry.service;
 
-import az.xazar.msinquiry.entity.DayOffEntity;
 import az.xazar.msinquiry.model.DayOffDto;
 
 import java.util.List;

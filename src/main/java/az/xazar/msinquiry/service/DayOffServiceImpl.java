@@ -36,34 +36,33 @@ public class DayOffServiceImpl implements DayOffService {
     @Override
     public DayOffDto editDayOff(DayOffDto dayOffDto) {
         getDayOffById(dayOffDto.getId());
-        DayOffEntity entity = dayOffMapper.toEntity(dayOffDto);
-        entity.setId(dayOffDto.getId());
-        repo.save(entity);
+        repo.save(dayOffMapper.toEntity(dayOffDto));
         return dayOffDto;
     }
 
     @Override
     public DayOffDto getDayOffById(Long id) {
-        dayOffUtil.findDayOff(id);
         return dayOffMapper.toDto(
-                repo.findById(id).get());
+                dayOffUtil.findDayOff(id));
 
     }
 
     @Override
     public List<DayOffDto> getDayOffs() {
-        return null;
+        return dayOffMapper.toDtos(
+                repo.findAll());
     }
 
     @Override
     public List<DayOffDto> getDayOffsByUserId(Long userid) {
-        return null;
+        return dayOffMapper.toDtos(
+                dayOffUtil.findAllByUserId(userid));
     }
 
     @Override
     public void deleteDayOff(Long id) {
-        DayOffDto dto = getDayOffById(id);
-        dto.setDeleted(true);
-        repo.save(dayOffMapper.toEntity(dto));
+        DayOffEntity entity = dayOffUtil.findDayOff(id);
+        entity.setDeleted(true);
+        repo.save(entity);
     }
 }
