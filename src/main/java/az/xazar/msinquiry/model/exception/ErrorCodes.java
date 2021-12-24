@@ -1,4 +1,4 @@
-package az.xazar.msinquiry.model;
+package az.xazar.msinquiry.model.exception;
 
 public final class ErrorCodes {
     public static final String UNEXPECTED_EXCEPTION = "general.unexpected-exception";
