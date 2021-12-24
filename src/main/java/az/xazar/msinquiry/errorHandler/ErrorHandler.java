@@ -2,7 +2,7 @@ package az.xazar.msinquiry.errorHandler;
 
 import az.xazar.msinquiry.model.Ad.exception.AdErrorCodes;
 import az.xazar.msinquiry.model.Ad.exception.AdNotFoundException;
-import az.xazar.msinquiry.model.ErrorCodes;
+import az.xazar.msinquiry.model.exception.ErrorCodes;
 import az.xazar.msinquiry.model.ErrorDto;
 import az.xazar.msinquiry.model.exception.DayOffErrorCodes;
 import az.xazar.msinquiry.model.exception.DayOffNotFoundException;
